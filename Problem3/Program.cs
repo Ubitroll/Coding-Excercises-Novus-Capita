@@ -5,16 +5,17 @@
         static void Main(string[] args)
         {
             int row, space, star;
+            string lineText = "";
 
             for (row = 0; row < 5; row++)
 
             {
 
-                for (space = 0; space < 5 - row; space++)
+                for (space = 0; space < 5; space++)
 
                 {
 
-                    Console.Write(" ");
+                    lineText = lineText + " ";
 
                 }
 
@@ -22,11 +23,14 @@
 
                 {
 
-                    Console.Write("*");
+                    lineText = lineText + "*";
 
                 }
+                Console.SetCursorPosition((Console.WindowWidth - lineText.Length) / 2, Console.CursorTop);
 
-                Console.WriteLine();
+                Console.WriteLine(lineText);
+
+                lineText = "";
 
             }
 
